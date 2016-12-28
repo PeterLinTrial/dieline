@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>  </head>
+<body>
+
+
+
+<form action="dielineFin.php" method =¡±get¡±>
+
+  <fieldset>
+    <legend> VFFS Bag Dieline Information:</legend>
+ Bag Former dimension:  <br>
+
+<input type="number" name="formerSize" value =100><br>
+
+ Bag Repeat length:  <br>
+
+<input type="number" name="repeatLength" value = 150><br>
+
+ Hem width:  <br>
+
+<input type="number" name="hemWidth" value = 0><br>
+
+ Gusset width:  <br>
+
+<input type="number" name="gussetWidth" value = 0><br>
+
+Tops seal width:  <br>
+
+<input type="number" name="topsealWidth" value = 10><br>
+
+Bottom seal width:  <br>
+
+<input type="number" name="bottomsealWidth" value = 10><br>
+
+Back seal width:  <br>
+
+<input type="number" name="backsealWidth" value = 10><br>
+
+Back seal Pattern:  <br>
+
+<select id="backsealPattern">
+
+                        <option value="Fin Seal">finSeal</option>
+
+                        <option value="Lap Seal">lapSeal</option>
+
+ </select><br>
+
+Former center position: <br>
+
+ <select id="formerCenterPosition">
+
+          <option value="offset">offset</option>
+
+          <option value="center">center</option>
+
+</select><br>
+
+Back seal folding direction: <br>
+
+ <select id="backsealFoldingDirection">
+
+                        <option value="right">center</option>
+
+                        <option value="left">offset</option>
+
+                   </select><br>
+
+Text direction:  <br>
+
+<select id="textDirection">
+
+                        <option value="8">8</option>
+
+                        <option value="1">1</option>
+
+                        <option value="2">2</option>
+
+                        <option value="3">3</option>
+
+                        <option value="4">4</option>
+
+                        <option value="5">5</option>
+
+                        <option value="6">6</option>
+
+                        <option value="7">7</option>
+
+                   </select><br>
+
+<input type="submit" value = ¡°Creat Dieline¡±> <br>
+
+  </fieldset>
+
+</form>
+
+</body>
+
+</html>
