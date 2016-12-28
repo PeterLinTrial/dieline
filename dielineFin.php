@@ -49,7 +49,7 @@ else {
 var dieline = document.getElementById("dielineCanvas");
 var ctx = dieline.getContext("2d");
 
-<-- 图原点 –>
+
 x0 = 50;
 y0 = 100;
 
@@ -57,26 +57,26 @@ eyemarkPositionX = eyemarkPositoinX + x0;
 bottomsealPositionY = y0+ (repeatLength – topsealWidth)/dielineRatio;
 backsealPositionX = x0+ (filmWidth – backsealWidth)/dielineRatio;
 
-<-- 外框 –>
+
 ctx.rect(x0, y0, filmWidth/dielineRatio, repeatLength/dielineRatio);
 ctx.stroke();
 
-<-- front Panel –>
+
 ctx.fillStyle="#F0F0F0”>;
 ctx.fillRect(x0+frontPanelPositionX, y0,  frontPanelWidth/dielineRatio, repeatLength/dielineRatio);
 
-<-- 热封区 –>
+
 ctx.fillStyle="#A9A9A9";
 ctx.fillRect(x0, y0, filmWidth/dielineRatio, topsealWidth/dielineRatio); 
 ctx.fillRect(x0, bottomsealPositionY, filmWidth/dielineRatio, topsealWidth/dielineRatio);
 ctx.rect(x0, y0, backsealWidth/dielineRatio, repeatLength/dielineRatio);
 ctx.rect(backsealPositionX, y0, backsealWidth/dielineRatio, repeatLength/dielineRatio);
 
-<-- 电眼对比白区 –>
+
 ctx.fillStyle="#EEEEEE";
 ctx.fillRect(eyemarkPositionX, y0, 10/dielineRatio, repleatLength/dielineRatio);
 
-<-- 电眼区 –>
+
 ctx.fillStyle="#000000";
 ctx.fillRect(eyemarkPositionX, y0, 10/dielineRatio, 5/dielineRatio);
 ctx.fillRect(eyemarkPositionX, y0-10+repeatLength/dielineRatio, 10/dielineRatio, 5/dielineRatio);
