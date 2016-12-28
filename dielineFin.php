@@ -3,43 +3,43 @@
  <body>
 
 <?php
-$formerSize = $_get[¡°formerSize¡±];
- $backsealWidth = $_get[¡°backsealWidth¡±];
-$backsealFoldingDirection =  $_get[¡°backsealFoldingDirection¡±];
-$formerCenterPosition  = $_get[¡°formerCenterPosition¡±];
-$repeatLength = $_get[¡°repeatLength¡±]; 
-$topsealWidth = $_get[¡°repeatLength¡±];
-$bottomsealWidth = $_get[¡°bottomselWidth¡±]; 
-$textDirection = $_get[¡°textDirection¡±];
+$formerSize = $_get[â€œformerSizeâ€];
+ $backsealWidth = $_get[â€œbacksealWidthâ€];
+$backsealFoldingDirection =  $_get[â€œbacksealFoldingDirectionâ€];
+$formerCenterPosition  = $_get[â€œformerCenterPositionâ€];
+$repeatLength = $_get[â€œrepeatLengthâ€]; 
+$topsealWidth = $_get[â€œrepeatLengthâ€];
+$bottomsealWidth = $_get[â€œbottomselWidthâ€]; 
+$textDirection = $_get[â€œtextDirectionâ€];
 
 $filmWidth = 2*$formerSize + 2*$backsealWidth;
 
-if ($filmWidth/600 > $_get[¡°repeatLength¡±]/500) {
+if ($filmWidth/600 > $_get[â€œrepeatLengthâ€]/500) {
     $dielineRatio = $filmWidth/600 }
 else { 
     $dielineRatio = $repeatLength/500}
 
 $frontPanelWidth = ($formerSize + 20)/$dielineRatio
 
-if ($backsealFoldingDirection == ¡°right¡±) {
-$eyemarkPositionX = ($filmWidth ¨C 10)/$dielineRatio
-$foldingCoveredPositionX = ($filmWidth ¨C 2*$backsealWidth)/$dielineRatio }
+if ($backsealFoldingDirection == â€œrightâ€) {
+$eyemarkPositionX = ($filmWidth â€“ 10)/$dielineRatio
+$foldingCoveredPositionX = ($filmWidth â€“ 2*$backsealWidth)/$dielineRatio }
 else { 
 $eyemarkPositionX = 0 
 $foldingCoveredPositionX = 0 }
 
-if ($backsealFoldingDirection == ¡°right¡±) {
-if ($formerCenterPosition == ¡°center¡±) {
+if ($backsealFoldingDirection == â€œrightâ€) {
+if ($formerCenterPosition == â€œcenterâ€) {
 	$frontPanelPositionX = ($formerSize/2 + $backsealWidth - 10 )/$dielineRatio}
 else { 
-       $frontPanelPositionX = ($formerSize/2 + 0.5*$backsealWidth ¨C 10)/$dielineRatio}
+       $frontPanelPositionX = ($formerSize/2 + 0.5*$backsealWidth â€“ 10)/$dielineRatio}
 }
 else {
-if ($formerCenterPosition == ¡°center¡±) { 
+if ($formerCenterPosition == â€œcenterâ€) { 
  $frontPanelPositionX = ($formerSize/2 + $backsealWidth - 10)/ $dielineRatio
 	}
 else { 
- $frontPanelPositionX = ($formerSize/2 + 1.5*$backsealWidth ¨C 10)/$dielineRatio}
+ $frontPanelPositionX = ($formerSize/2 + 1.5*$backsealWidth â€“ 10)/$dielineRatio}
 }
 }
 ?>
@@ -49,34 +49,34 @@ else {
 var dieline = document.getElementById("dielineCanvas");
 var ctx = dieline.getContext("2d");
 
-<-- Í¼Ô­µã ¨C>
+<-- å›¾åŽŸç‚¹ â€“>
 x0 = 50;
 y0 = 100;
 
 eyemarkPositionX = eyemarkPositoinX + x0;
-bottomsealPositionY = y0+ (repeatLength ¨C topsealWidth)/dielineRatio;
-backsealPositionX = x0+ (filmWidth ¨C backsealWidth)/dielineRatio;
+bottomsealPositionY = y0+ (repeatLength â€“ topsealWidth)/dielineRatio;
+backsealPositionX = x0+ (filmWidth â€“ backsealWidth)/dielineRatio;
 
-<-- Íâ¿ò ¨C>
+<-- å¤–æ¡† â€“>
 ctx.rect(x0, y0, filmWidth/dielineRatio, repeatLength/dielineRatio);
 ctx.stroke();
 
-<-- front Panel ¨C>
-ctx.fillStyle="#F0F0F0¡±>;
+<-- front Panel â€“>
+ctx.fillStyle="#F0F0F0â€>;
 ctx.fillRect(x0+frontPanelPositionX, y0,  frontPanelWidth/dielineRatio, repeatLength/dielineRatio);
 
-<-- ÈÈ·âÇø ¨C>
+<-- çƒ­å°åŒº â€“>
 ctx.fillStyle="#A9A9A9";
 ctx.fillRect(x0, y0, filmWidth/dielineRatio, topsealWidth/dielineRatio); 
 ctx.fillRect(x0, bottomsealPositionY, filmWidth/dielineRatio, topsealWidth/dielineRatio);
 ctx.rect(x0, y0, backsealWidth/dielineRatio, repeatLength/dielineRatio);
 ctx.rect(backsealPositionX, y0, backsealWidth/dielineRatio, repeatLength/dielineRatio);
 
-<-- µçÑÛ¶Ô±È°×Çø ¨C>
+<-- ç”µçœ¼å¯¹æ¯”ç™½åŒº â€“>
 ctx.fillStyle="#EEEEEE";
 ctx.fillRect(eyemarkPositionX, y0, 10/dielineRatio, repleatLength/dielineRatio);
 
-<-- µçÑÛÇø ¨C>
+<-- ç”µçœ¼åŒº â€“>
 ctx.fillStyle="#000000";
 ctx.fillRect(eyemarkPositionX, y0, 10/dielineRatio, 5/dielineRatio);
 ctx.fillRect(eyemarkPositionX, y0-10+repeatLength/dielineRatio, 10/dielineRatio, 5/dielineRatio);
